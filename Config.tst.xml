@@ -11,7 +11,7 @@
   </Forms>
   <Permissions />
   <Settings>
-    <Setting name="TabName" value="ArchivesSpace Import" type="string">
+    <Setting name="TabName" value="ArchivesSpace Import TEST" type="string">
       <Description>Defines what text you want to appear on the addon ribbon. Does not affect logging or internal naming.</Description>
     </Setting>
     <Setting name="LogLabel" value="AeonSpace | " type="string">
