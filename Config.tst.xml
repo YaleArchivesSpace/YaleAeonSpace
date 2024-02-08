@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Yale ArchivesSpace Search - TEST</Name>
+  <Name>Yale ArchivesSpace Search - Merge</Name>
   <Author>Hudson Molonglo</Author>
   <Version>1.0.0</Version>
   <Active>True</Active>
@@ -11,7 +11,7 @@
   </Forms>
   <Permissions />
   <Settings>
-    <Setting name="TabName" value="ArchivesSpace Import TEST" type="string">
+    <Setting name="TabName" value="ArchivesSpace Import MERGE" type="string">
       <Description>Defines what text you want to appear on the addon ribbon. Does not affect logging or internal naming.</Description>
     </Setting>
     <Setting name="LogLabel" value="AeonSpace | " type="string">
