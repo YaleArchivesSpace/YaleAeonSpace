@@ -179,6 +179,12 @@ function ConfigureForm()
             seenFields[k] = true
          else
             Log("Field not present in Transaction form: " .. k)
+            local success, _ = pcall(SetFieldValue, "Transaction.CustomFields", k, v)
+            if success then
+               seenFields[k] = true
+            else
+               Log("Custom or other field (still) not present in Transaction form: " .. k)
+            end
          end
       end
 
