@@ -171,16 +171,59 @@ function ConfigureForm()
       end
 
       local mapped = JsonParser:ParseJSON(requestJson)
-      for k in pairs(mapped) do
+     for k in pairs(mapped) do
          local v = tostring(mapped[k]):sub(0, 255)
+		
+		-- HACK until the plugin gets sorted in ArchivesSpace
+		local oldK = k;
+		if (k == "ItemInfo1") then
+			k = "TopContainerRestriction";
+		elseif (k == "ItemInfo5") then
+			k = "AccessRestrictionNote";
+		elseif (k == "ItemInfo6") then
+			k = "UseRestrictionNote";
+		elseif (k == "ItemInfo7") then
+			k = "ExtentPhysicalDescription";
+		elseif (k == "ItemInfo8") then
+			k = "RestrictionCode";
+		elseif (k == "ItemInfo9") then
+			k = "DigitalObjectID";
+		elseif (k == "ItemInfo10") then
+			k = "TopContainerURI";
+		elseif (k == "ItemInfo11") then
+			k = "LocationURI";
+		elseif (k == "ItemInfo12") then
+			k = "CollectionTitle";
+		elseif (k == "ItemInfo14") then
+			k = "RootRecordURI";
+		elseif (k == "ItemIssue") then
+			k = "ItemSeries";
+		elseif (k == "ItemEdition") then
+			k = "ItemFolder";
+		end
+		if (k ~= oldK) then
+			Log("Mapping " .. oldK .. " to " .. k)
+		end
+		-- HACK END
+		
          local success, _ = pcall(SetFieldValue, "Transaction", k, v)
 
          if success then
+			-- HACK until the plugin gets sorted in ArchivesSpace
+			if (k ~= oldK) then
+				k = oldK;
+			end
+			-- HACK END
             seenFields[k] = true
          else
             Log("Field not present in Transaction form: " .. k)
             local success, _ = pcall(SetFieldValue, "Transaction.CustomFields", k, v)
             if success then
+			   -- HACK until the plugin gets sorted in ArchivesSpace
+			   if (k ~= oldK) then
+			      k = oldK;
+			   end
+			   -- HACK END
                seenFields[k] = true
             else
                Log("Custom or other field (still) not present in Transaction form: " .. k)
