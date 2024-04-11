@@ -21,8 +21,8 @@ Ctx = {
    Username = GetSetting("ArchivesSpaceUser"),
    Password = GetSetting("ArchivesSpacePassword"),
    TabName = GetSetting("TabName"),
-   LogLabel = GetSetting("LogLabel")
-   ArchivesSpaceFields = GetSetting("ArchivesSpaceFields")
+   LogLabel = GetSetting("LogLabel"),
+   ArchivesSpaceFields = GetSetting("ArchivesSpaceFields"),
    AeonFields = GetSetting("AeonFields")
 }
 
