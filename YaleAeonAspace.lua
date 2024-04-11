@@ -177,8 +177,8 @@ function ConfigureForm()
          -- Use config nodes (indirectly) to map ArchivesSpace fields onto Aeon fields
          -- Allows ArchivesSpace fields to be semantic and decoupled from Aeon fields
          -- Implemented when rolling back from Aeon Custom Fields to core fields
-         if mapToAeon.Fields[k] then
-			k = mapToAeon.Fields[k];
+         if mapToAeon[k] then
+         	k = mapToAeon[k];
          end
 
          local success, _ = pcall(SetFieldValue, "Transaction", k, v)
