@@ -22,6 +22,8 @@ Ctx = {
    Password = GetSetting("ArchivesSpacePassword"),
    TabName = GetSetting("TabName"),
    LogLabel = GetSetting("LogLabel")
+   ArchivesSpaceFields = GetSetting("ArchivesSpaceFields")
+   AeonFields = GetSetting("AeonFields")
 }
 
 -- Needs to come after settings are imported, as it uses settings values
@@ -67,6 +69,21 @@ function findInPath(name)
 end
 
 function Init()
+	-- Build field mapping table
+	mapToAeon = {};
+	if string.len(Ctx.ArchivesSpaceFields) > 0 and string.len(Ctx.AeonFields) > 0 then
+		local i = 0;
+		for aspaceName in string.gmatch(Ctx.ArchivesSpaceFields, "[^|]+") do
+			local m = 0;
+			for aeonName in string.gmatch(Ctx.AeonFields, "[^|]+") do
+				if m == i then
+					mapToAeon[aspaceName] = aeonName;
+				end
+				m = m + 1;
+			end
+			i = i + 1;
+		end
+	end
    local mainProgram = findInPath("YaleAeonAspace")
    dofile(mainProgram)
 

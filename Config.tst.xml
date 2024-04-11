@@ -26,6 +26,12 @@
     <Setting name="ArchivesSpacePassword" value="c3RydWNrMi1jbGFua2luZy1tdXNocm9vbQ==" type="string">
       <Description>ArchivesSpace password for read-only account</Description>
     </Setting>
+    <Setting name="ArchivesSpaceFields" value="" type="string">
+      <Description>Pipe-delimited list of fieldnames coming from ArchivesSpace that need to be mapped onto Aeon fields</Description>
+    </Setting>
+    <Setting name="AeonFields" value="" type="string">
+      <Description>Pipe-delimited list of Aeon fieldnames that ArchivesSpaceFields will be mapped onto</Description>
+    </Setting>
   </Settings>
   <Files>
     <File>Main.lua</File>
