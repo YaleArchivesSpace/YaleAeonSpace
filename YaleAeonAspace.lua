@@ -173,6 +173,14 @@ function ConfigureForm()
       local mapped = JsonParser:ParseJSON(requestJson)
       for k in pairs(mapped) do
          local v = tostring(mapped[k]):sub(0, 255)
+
+         -- Use config nodes (indirectly) to map ArchivesSpace fields onto Aeon fields
+         -- Allows ArchivesSpace fields to be semantic and decoupled from Aeon fields
+         -- Implemented when rolling back from Aeon Custom Fields to core fields
+         if mapToAeon[k] then
+         	k = mapToAeon[k];
+         end
+
          local success, _ = pcall(SetFieldValue, "Transaction", k, v)
 
          if success then
