@@ -2,7 +2,7 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Yale ArchivesSpace Search</Name>
   <Author>Hudson Molonglo</Author>
-  <Version>1.0.0</Version>
+  <Version>1.1.0</Version>
   <Active>True</Active>
   <Type>Addon</Type>
   <Description>Search ArchivesSpace records for requesting</Description>
@@ -25,6 +25,12 @@
     </Setting>
     <Setting name="ArchivesSpacePassword" value="dUJ5UU05bkt3WCNGNWU=" type="string">
       <Description>ArchivesSpace password for read-only account</Description>
+    </Setting>
+    <Setting name="ArchivesSpaceFields" value="UseRestrictionNote|ExtentPhysicalDescription|RestrictionCode|DigitalObjectID|RootRecordURI|LocationURI|CollectionTitle|TopContainerURI" type="string">
+      <Description>Pipe-delimited list of fieldnames coming from ArchivesSpace that need to be mapped onto Aeon fields</Description>
+    </Setting>
+    <Setting name="AeonFields" value="ItemInfo6|ItemInfo7|ItemInfo8|ItemInfo9|ItemInfo14|ItemInfo11|ItemInfo12|ItemInfo10" type="string">
+      <Description>Pipe-delimited list of Aeon fieldnames that ArchivesSpaceFields will be mapped onto</Description>
     </Setting>
   </Settings>
   <Files>
