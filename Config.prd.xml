@@ -2,7 +2,7 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Yale ArchivesSpace Search</Name>
   <Author>Hudson Molonglo</Author>
-  <Version>1.2.0</Version>
+  <Version>1.2.1</Version>
   <Active>True</Active>
   <Type>Addon</Type>
   <Description>Search ArchivesSpace records for requesting</Description>
