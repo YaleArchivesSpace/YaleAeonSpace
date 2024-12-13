@@ -2,7 +2,7 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Yale ArchivesSpace Search</Name>
   <Author>Hudson Molonglo</Author>
-  <Version>1.2.1</Version>
+  <Version>1.2.2</Version>
   <Active>True</Active>
   <Type>Addon</Type>
   <Description>Search ArchivesSpace records for requesting</Description>
@@ -23,7 +23,7 @@
     <Setting name="ArchivesSpaceUser" value="s_lib_aeon_lookup" type="string">
       <Description>ArchivesSpace account with wide but read-only access to records</Description>
     </Setting>
-    <Setting name="ArchivesSpacePassword" value="c3RydWNrMi1jbGFua2luZy1tdXNocm9vbQ==" type="string">
+    <Setting name="ArchivesSpacePassword" value="dUJ5UU05bkt3WCNGNWU=" type="string">
       <Description>ArchivesSpace password for read-only account</Description>
     </Setting>
     <Setting name="ArchivesSpaceFields" value="TopContainerRestriction|AccessRestrictionNote|UseRestrictionNote|ExtentPhysicalDescription|RestrictionCode|DigitalObjectID|RootRecordURI|LocationURI|CollectionTitle|TopContainerURI" type="string">
